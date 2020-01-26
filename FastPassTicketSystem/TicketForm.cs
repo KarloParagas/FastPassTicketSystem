@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FastPassTicketSystem
 {
-    public partial class TitleBar : Form
+    public partial class TicketForm : Form
     {
-        public TitleBar()
+        public TicketForm()
         {
             InitializeComponent();
             TitleBarTime.Start();

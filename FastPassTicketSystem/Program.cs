@@ -16,7 +16,7 @@ namespace FastPassTicketSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TitleBar());
+            Application.Run(new TicketForm());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace FastPassTicketSystem
 {
-    partial class TitleBar
+    partial class TicketForm
     {
         /// <summary>
         /// Required designer variable.
@@ -154,7 +154,7 @@
             this.TitleBarTime.Interval = 1000;
             this.TitleBarTime.Tick += new System.EventHandler(this.TitleBarTime_Tick);
             // 
-            // TitleBar
+            // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -165,7 +165,7 @@
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.OptionsBtn);
             this.Controls.Add(this.listBox1);
-            this.Name = "TitleBar";
+            this.Name = "TicketForm";
             this.Text = "Time Display";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
