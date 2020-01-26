@@ -129,6 +129,7 @@
             this.OkBtn.TabIndex = 10;
             this.OkBtn.Text = "OK";
             this.OkBtn.UseVisualStyleBackColor = true;
+            this.OkBtn.Click += new System.EventHandler(this.OkBtn_Click);
             // 
             // OptionsForm
             // 

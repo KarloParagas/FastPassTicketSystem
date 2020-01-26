@@ -166,7 +166,7 @@
             this.Controls.Add(this.OptionsBtn);
             this.Controls.Add(this.listBox1);
             this.Name = "TicketForm";
-            this.Text = "Time Display";
+            this.Text = "0:00:00";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
