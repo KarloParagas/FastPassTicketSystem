@@ -33,10 +33,10 @@
             this.OptionsBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.GuestsEnterLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.NextEntryLabel = new System.Windows.Forms.Label();
+            this.TotalTicketsLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.IssueTicketBtn = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.GuestsEnterLabel);
             this.groupBox1.Location = new System.Drawing.Point(34, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(725, 186);
@@ -82,19 +82,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Guests with the following tickets may now enter:";
             // 
-            // label1
+            // GuestsEnterLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "0";
+            this.GuestsEnterLabel.Location = new System.Drawing.Point(16, 83);
+            this.GuestsEnterLabel.Name = "GuestsEnterLabel";
+            this.GuestsEnterLabel.Size = new System.Drawing.Size(244, 32);
+            this.GuestsEnterLabel.TabIndex = 6;
+            this.GuestsEnterLabel.Text = "0";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.NextEntryLabel);
+            this.groupBox2.Controls.Add(this.TotalTicketsLabel);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(34, 235);
@@ -104,23 +103,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ticket Availability";
             // 
-            // label6
+            // NextEntryLabel
             // 
-            this.label6.Location = new System.Drawing.Point(374, 175);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 38);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "0";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NextEntryLabel.Location = new System.Drawing.Point(374, 175);
+            this.NextEntryLabel.Name = "NextEntryLabel";
+            this.NextEntryLabel.Size = new System.Drawing.Size(240, 38);
+            this.NextEntryLabel.TabIndex = 3;
+            this.NextEntryLabel.Text = "0";
+            this.NextEntryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // TotalTicketsLabel
             // 
-            this.label5.Location = new System.Drawing.Point(374, 78);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 38);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TotalTicketsLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TotalTicketsLabel.Location = new System.Drawing.Point(374, 78);
+            this.TotalTicketsLabel.Name = "TotalTicketsLabel";
+            this.TotalTicketsLabel.Size = new System.Drawing.Size(240, 38);
+            this.TotalTicketsLabel.TabIndex = 2;
+            this.TotalTicketsLabel.Text = "0";
+            this.TotalTicketsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -168,7 +168,6 @@
             this.Name = "TitleBar";
             this.Text = "Time Display";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -181,13 +180,13 @@
         private System.Windows.Forms.Button OptionsBtn;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label GuestsEnterLabel;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button IssueTicketBtn;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label NextEntryLabel;
+        private System.Windows.Forms.Label TotalTicketsLabel;
         private System.Windows.Forms.Timer TitleBarTime;
     }
 }
