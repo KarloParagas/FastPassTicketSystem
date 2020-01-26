@@ -16,5 +16,10 @@ namespace FastPassTicketSystem
         {
             InitializeComponent();
         }
+
+        private void OkBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
     }
 }
