@@ -15,7 +15,13 @@ namespace FastPassTicketSystem
         public TicketForm()
         {
             InitializeComponent();
-            TitleBarTime.Start();
+            OptionsForm options = new OptionsForm();
+            DialogResult result = options.ShowDialog();
+            if (result == DialogResult.OK) 
+            {
+                TitleBarTime.Start();            
+            }
+
         }
 
         /// <summary>
