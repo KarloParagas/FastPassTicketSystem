@@ -44,98 +44,109 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 61);
+            this.label1.Location = new System.Drawing.Point(19, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 32);
+            this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Minutes per window:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 145);
+            this.label2.Location = new System.Drawing.Point(19, 61);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 32);
+            this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Guests per window:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 236);
+            this.label3.Location = new System.Drawing.Point(19, 99);
+            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 32);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Start time:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 320);
+            this.label4.Location = new System.Drawing.Point(19, 134);
+            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 32);
+            this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "End time:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 406);
+            this.label5.Location = new System.Drawing.Point(19, 170);
+            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(255, 32);
+            this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "First ticket number:";
             // 
             // MinutesPerWindowTxt
             // 
-            this.MinutesPerWindowTxt.Location = new System.Drawing.Point(375, 55);
+            this.MinutesPerWindowTxt.Location = new System.Drawing.Point(141, 23);
+            this.MinutesPerWindowTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MinutesPerWindowTxt.Name = "MinutesPerWindowTxt";
-            this.MinutesPerWindowTxt.Size = new System.Drawing.Size(295, 38);
-            this.MinutesPerWindowTxt.TabIndex = 5;
+            this.MinutesPerWindowTxt.Size = new System.Drawing.Size(113, 20);
+            this.MinutesPerWindowTxt.TabIndex = 0;
             // 
             // EndTimeTxt
             // 
-            this.EndTimeTxt.Location = new System.Drawing.Point(375, 314);
+            this.EndTimeTxt.Location = new System.Drawing.Point(141, 132);
+            this.EndTimeTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EndTimeTxt.Name = "EndTimeTxt";
-            this.EndTimeTxt.Size = new System.Drawing.Size(295, 38);
-            this.EndTimeTxt.TabIndex = 6;
+            this.EndTimeTxt.Size = new System.Drawing.Size(113, 20);
+            this.EndTimeTxt.TabIndex = 3;
             // 
             // FirstTicketNumTxt
             // 
-            this.FirstTicketNumTxt.Location = new System.Drawing.Point(375, 400);
+            this.FirstTicketNumTxt.Location = new System.Drawing.Point(141, 168);
+            this.FirstTicketNumTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.FirstTicketNumTxt.Name = "FirstTicketNumTxt";
-            this.FirstTicketNumTxt.Size = new System.Drawing.Size(295, 38);
-            this.FirstTicketNumTxt.TabIndex = 7;
+            this.FirstTicketNumTxt.Size = new System.Drawing.Size(113, 20);
+            this.FirstTicketNumTxt.TabIndex = 4;
             // 
             // StartTimeTxt
             // 
-            this.StartTimeTxt.Location = new System.Drawing.Point(375, 230);
+            this.StartTimeTxt.Location = new System.Drawing.Point(141, 96);
+            this.StartTimeTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.StartTimeTxt.Name = "StartTimeTxt";
-            this.StartTimeTxt.Size = new System.Drawing.Size(295, 38);
-            this.StartTimeTxt.TabIndex = 8;
+            this.StartTimeTxt.Size = new System.Drawing.Size(113, 20);
+            this.StartTimeTxt.TabIndex = 2;
             // 
             // GuestsPerWindowTxt
             // 
-            this.GuestsPerWindowTxt.Location = new System.Drawing.Point(375, 139);
+            this.GuestsPerWindowTxt.Location = new System.Drawing.Point(141, 58);
+            this.GuestsPerWindowTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.GuestsPerWindowTxt.Name = "GuestsPerWindowTxt";
-            this.GuestsPerWindowTxt.Size = new System.Drawing.Size(295, 38);
-            this.GuestsPerWindowTxt.TabIndex = 9;
+            this.GuestsPerWindowTxt.Size = new System.Drawing.Size(113, 20);
+            this.GuestsPerWindowTxt.TabIndex = 1;
             // 
             // OkBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(375, 505);
+            this.OkBtn.Location = new System.Drawing.Point(141, 212);
+            this.OkBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.OkBtn.Name = "OkBtn";
-            this.OkBtn.Size = new System.Drawing.Size(295, 48);
-            this.OkBtn.TabIndex = 10;
+            this.OkBtn.Size = new System.Drawing.Size(111, 20);
+            this.OkBtn.TabIndex = 5;
             this.OkBtn.Text = "OK";
             this.OkBtn.UseVisualStyleBackColor = true;
             this.OkBtn.Click += new System.EventHandler(this.OkBtn_Click);
             // 
             // OptionsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 604);
+            this.ClientSize = new System.Drawing.Size(280, 253);
             this.Controls.Add(this.OkBtn);
             this.Controls.Add(this.GuestsPerWindowTxt);
             this.Controls.Add(this.StartTimeTxt);
@@ -147,6 +158,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "OptionsForm";
             this.Text = "Options";
             this.ResumeLayout(false);
