@@ -17,15 +17,27 @@ namespace FastPassTicketSystem
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Create an instance of the user's input so it can be accessed in other forms
+        /// </summary>
+        public static Options input = new Options();
+
         private void OkBtn_Click(object sender, EventArgs e)
         {
             if (IsDataValid() == true) 
             {
-                //Extract all input
+                //Create an Options object with the user's input
+                Options i = new Options()
+                {
+                    //Extract all input
+                    MinutesPerWindow = Convert.ToInt32(MinutesPerWindowTxt.Text),
+                    StartTime = Convert.ToDateTime(StartTimeTxt.Text),
+                    EndTime = Convert.ToDateTime(EndTimeTxt.Text),
+                    FirstTicketNumber = Convert.ToInt32(FirstTicketNumTxt.Text)             
+                };
 
-                //Assign it to the time slot class
-
-                //Store it in a collection
+                //Assign the user's input to the Options class
+                input = i;
 
                 DialogResult = DialogResult.OK;            
             }

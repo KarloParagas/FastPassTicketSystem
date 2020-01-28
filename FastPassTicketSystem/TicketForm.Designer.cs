@@ -48,16 +48,16 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 263);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.listBox1.Location = new System.Drawing.Point(34, 262);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(1);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(274, 160);
             this.listBox1.TabIndex = 0;
             // 
             // OptionsBtn
             // 
-            this.OptionsBtn.Location = new System.Drawing.Point(13, 434);
-            this.OptionsBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.OptionsBtn.Location = new System.Drawing.Point(34, 433);
+            this.OptionsBtn.Margin = new System.Windows.Forms.Padding(1);
             this.OptionsBtn.Name = "OptionsBtn";
             this.OptionsBtn.Size = new System.Drawing.Size(98, 23);
             this.OptionsBtn.TabIndex = 1;
@@ -66,8 +66,8 @@
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(187, 434);
-            this.ExitBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ExitBtn.Location = new System.Drawing.Point(208, 433);
+            this.ExitBtn.Margin = new System.Windows.Forms.Padding(1);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(98, 23);
             this.ExitBtn.TabIndex = 2;
@@ -77,10 +77,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.GuestsEnterLabel);
-            this.groupBox1.Location = new System.Drawing.Point(13, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Location = new System.Drawing.Point(34, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
             this.groupBox1.Size = new System.Drawing.Size(272, 78);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
@@ -101,10 +101,10 @@
             this.groupBox2.Controls.Add(this.TotalTicketsLabel);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(13, 99);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox2.Location = new System.Drawing.Point(34, 98);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(1);
             this.groupBox2.Size = new System.Drawing.Size(273, 120);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
@@ -153,8 +153,8 @@
             // 
             // IssueTicketBtn
             // 
-            this.IssueTicketBtn.Location = new System.Drawing.Point(13, 228);
-            this.IssueTicketBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.IssueTicketBtn.Location = new System.Drawing.Point(34, 227);
+            this.IssueTicketBtn.Margin = new System.Windows.Forms.Padding(1);
             this.IssueTicketBtn.Name = "IssueTicketBtn";
             this.IssueTicketBtn.Size = new System.Drawing.Size(112, 23);
             this.IssueTicketBtn.TabIndex = 5;
@@ -170,14 +170,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 468);
+            this.ClientSize = new System.Drawing.Size(341, 468);
             this.Controls.Add(this.IssueTicketBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.OptionsBtn);
             this.Controls.Add(this.listBox1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "TicketForm";
             this.Text = "0:00:00";
             this.groupBox1.ResumeLayout(false);
