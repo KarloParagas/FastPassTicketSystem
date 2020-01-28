@@ -21,7 +21,6 @@ namespace FastPassTicketSystem
             {
                 TitleBarTime.Start();            
             }
-
         }
 
         /// <summary>
@@ -31,7 +30,20 @@ namespace FastPassTicketSystem
         /// <param name="e"></param>
         private void TitleBarTime_Tick(object sender, EventArgs e)
         {
-            this.Text = DateTime.Now.ToString("h:mm:ss") + " (Open)";
+            //Grab the current time, start time and end time from the Options form
+            DateTime open = OptionsForm.input.StartTime;
+            DateTime closed = OptionsForm.input.EndTime;
+            DateTime currentTime = DateTime.Now;
+
+
+            if (currentTime < open || currentTime > closed)
+            {
+                this.Text = $"{DateTime.Now.ToString()} (Closed)";
+            }
+            else 
+            {
+                this.Text = $"{DateTime.Now.ToString()} (Open)";
+            }
         }
     }
 }
