@@ -24,7 +24,7 @@ namespace FastPassTicketSystem
             }
         }
 
-        public TimeSlot Slot { get; set; }
+        public Options Slot { get; set; }
 
         private int CreateTicketNumber()
         {
