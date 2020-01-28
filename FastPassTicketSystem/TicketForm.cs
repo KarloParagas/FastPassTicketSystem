@@ -32,11 +32,10 @@ namespace FastPassTicketSystem
         {
             //Grab the current time, start time and end time from the Options form
             DateTime open = OptionsForm.input.StartTime;
-            DateTime closed = OptionsForm.input.EndTime;
             DateTime currentTime = DateTime.Now;
 
 
-            if (currentTime < open || currentTime > closed)
+            if (currentTime < open)
             {
                 this.Text = $"{DateTime.Now.ToString()} (Closed)";
             }
