@@ -30,7 +30,7 @@ namespace FastPassTicketSystem
         /// <param name="e"></param>
         private void TitleBarTime_Tick(object sender, EventArgs e)
         {
-            //Grab the current time, start time and end time from the Options form
+            //Grab the current time, start time from the Options form
             DateTime open = OptionsForm.input.StartTime;
             DateTime currentTime = DateTime.Now;
 

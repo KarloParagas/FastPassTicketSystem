@@ -24,9 +24,9 @@ namespace FastPassTicketSystem
 
         private void OkBtn_Click(object sender, EventArgs e)
         {
+            //Create an Options object and set the user's input to it's properties
             if (IsDataValid() == true) 
             {
-                //Create an Options object with the user's input
                 Options i = new Options()
                 {
                     //Extract all input
@@ -36,7 +36,8 @@ namespace FastPassTicketSystem
                     FirstTicketNumber = Convert.ToInt32(FirstTicketNumTxt.Text)             
                 };
 
-                //Assign the user's input to the Options class
+                //Assign the Options object with all the extrated user input to the UserInput instance
+                //so it can be accessed in other forms
                 input = i;
 
                 DialogResult = DialogResult.OK;            
