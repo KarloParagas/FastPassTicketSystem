@@ -97,6 +97,9 @@ namespace FastPassTicketSystem
             //Update next available entry
             NextEntryLabel.Text = DateTime.Now.AddMinutes(minutes).ToShortTimeString().ToString(); //Currently doesn't update
 
+            //Update the next available entry
+            GuestsEnterLabel.Text = currentTicket.ToString();
+
             //Add the next ticket and time to the listbox
             listBox1.Items.Add($"Ticket {currentTicket.ToString()}: " +
                 $"{DateTime.Now.AddMinutes(OptionsForm.input.MinutesPerWindow).ToShortTimeString().ToString()}");
