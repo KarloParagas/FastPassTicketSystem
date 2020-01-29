@@ -31,6 +31,7 @@ namespace FastPassTicketSystem
                 {
                     //Extract all input
                     MinutesPerWindow = Convert.ToInt32(MinutesPerWindowTxt.Text),
+                    GuestsPerWindow = Convert.ToInt32(GuestsPerWindowTxt.Text),
                     StartTime = Convert.ToDateTime(StartTimeTxt.Text),
                     EndTime = Convert.ToDateTime(EndTimeTxt.Text),
                     FirstTicketNumber = Convert.ToInt32(FirstTicketNumTxt.Text)             

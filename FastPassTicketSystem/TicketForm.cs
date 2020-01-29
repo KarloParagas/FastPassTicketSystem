@@ -21,6 +21,13 @@ namespace FastPassTicketSystem
             {
                 TitleBarTime.Start();            
             }
+
+            //Display the guests with following tickets that can enter
+            GuestsEnterLabel.Text = $"{OptionsForm.input.FirstTicketNumber.ToString()} - " +
+                                    $"{(OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber - 1).ToString()}";
+
+            //Display next available entry
+            NextEntryLabel.Text = DateTime.Now.AddMinutes(OptionsForm.input.MinutesPerWindow).ToShortTimeString().ToString();
         }
 
         /// <summary>
