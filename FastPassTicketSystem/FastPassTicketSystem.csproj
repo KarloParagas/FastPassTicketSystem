@@ -52,7 +52,6 @@
     <Compile Include="OptionsForm.Designer.cs">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ticket.cs" />
     <Compile Include="TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
