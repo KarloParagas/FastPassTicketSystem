@@ -12,6 +12,15 @@ namespace FastPassTicketSystem
 {
     public partial class TicketForm : Form
     {
+        //Keeps track of the outstanding tickets issued
+        int count = 0;
+
+        //Keeps track of the current ticket
+        int currentTicket;
+
+        //Keeps track of the minutes to be added
+        int minutes;
+
         public TicketForm()
         {
             InitializeComponent();
@@ -21,6 +30,15 @@ namespace FastPassTicketSystem
             {
                 TitleBarTime.Start();            
             }
+        }
+
+        private void TicketForm_Load(object sender, EventArgs e)
+        {
+            //Set the current ticket using the user input from the OptionsForm
+            currentTicket = OptionsForm.input.GuestsPerWindow;
+
+            //Set the amount of minuted to be added based on the user input in the OptionsForm
+            minutes = OptionsForm.input.MinutesPerWindow;
 
             //Display the guests with following tickets that can enter
             GuestsEnterLabel.Text = $"{OptionsForm.input.FirstTicketNumber.ToString()} - " +
@@ -61,5 +79,30 @@ namespace FastPassTicketSystem
         {
             Close();
         }
+
+        /// <summary>
+        /// Issues the next ticket and adds it to the list box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void IssueTicketBtn_Click(object sender, EventArgs e)
+        {
+            //Increment the current ticket for the next ticket to be issued
+            currentTicket++;
+
+            //Add one to total tickets outstanding everytime the issue button gets clicked
+            count++;
+            TotalTicketsLabel.Text = count.ToString();
+
+            //Update next available entry
+            NextEntryLabel.Text = DateTime.Now.AddMinutes(minutes).ToShortTimeString().ToString(); //Currently doesn't update
+
+            //Add the next ticket and time to the listbox
+            listBox1.Items.Add($"Ticket {currentTicket.ToString()}: " +
+                $"{DateTime.Now.AddMinutes(OptionsForm.input.MinutesPerWindow).ToShortTimeString().ToString()}");
+        }
+
+        //TODO: Once the next available entry time has passed, add more minutes 
+        //based on the options setting (minutes per window) , and update next available entry
     }
 }
