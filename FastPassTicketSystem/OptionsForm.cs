@@ -74,6 +74,11 @@ namespace FastPassTicketSystem
                                 "First ticket number must be a valid integer input.");
                 return false;
             }
+            if (Convert.ToInt32(FirstTicketNumTxt.Text) > Convert.ToInt32(GuestsPerWindowTxt.Text)) 
+            {
+                MessageBox.Show("First ticket number cannot be greater than the guests per window");
+                return false;
+            }
 
             return true;
         }
