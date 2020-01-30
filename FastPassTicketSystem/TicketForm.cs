@@ -21,6 +21,9 @@ namespace FastPassTicketSystem
         //Keeps track of the minutes to be added
         int minutes;
 
+        //Keeps track of the current entry time
+        DateTime nextEntryTime;
+
         public TicketForm()
         {
             InitializeComponent();
@@ -39,6 +42,9 @@ namespace FastPassTicketSystem
 
             //Set the amount of minuted to be added based on the user input in the OptionsForm
             minutes = OptionsForm.input.MinutesPerWindow;
+
+            //Set next entry time based on minutes per window that the user input in the options form
+            nextEntryTime = DateTime.Now.AddMinutes(minutes);
 
             //Display the guests with following tickets that can enter
             GuestsEnterLabel.Text = $"{OptionsForm.input.FirstTicketNumber.ToString()} - " +
@@ -94,16 +100,24 @@ namespace FastPassTicketSystem
             count++;
             TotalTicketsLabel.Text = count.ToString();
 
-            //Update next available entry
-            NextEntryLabel.Text = DateTime.Now.AddMinutes(minutes).ToShortTimeString().ToString(); //Currently doesn't update
+            //Add minutes per window to the next available entry time
+            //DateTime nextEntryTime = Convert.ToDateTime(NextEntryLabel.Text);
+
+            //Note: First outstanding ticket should match the next available entry, but increments according to minutes for 
+            NextEntryLabel.Text = nextEntryTime.ToShortTimeString().ToString();
 
             //Update the next available entry
             GuestsEnterLabel.Text = currentTicket.ToString();
 
             //Add the next ticket and time to the listbox
             listBox1.Items.Add($"Ticket {currentTicket.ToString()}: " +
-                $"{DateTime.Now.AddMinutes(OptionsForm.input.MinutesPerWindow).ToShortTimeString().ToString()}");
+                $"{nextEntryTime.ToShortTimeString().ToString()}");
+
+            //Add more minutes to the next entry time
+            nextEntryTime = nextEntryTime.AddMinutes(minutes);
         }
+
+        //TODO: Make Options button functional
 
         //TODO: Once the next available entry time has passed, add more minutes 
         //based on the options setting (minutes per window) , and update next available entry
