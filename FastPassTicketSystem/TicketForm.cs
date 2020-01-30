@@ -42,7 +42,7 @@ namespace FastPassTicketSystem
             minutes = OptionsForm.input.MinutesPerWindow;
 
             //Set next entry time based on minutes per window that the user input in the options form
-            nextEntryTime = DateTime.Now.AddMinutes(minutes);
+            nextEntryTime = DateTime.Now.AddMinutes(minutes).AddSeconds(-DateTime.Now.Second);
 
             //Set the next ticket to be issued
             nextTicket = OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber;
@@ -64,7 +64,7 @@ namespace FastPassTicketSystem
         {
             //Grab the current time, start time from the Options form
             DateTime open = OptionsForm.input.StartTime;
-            DateTime currentTime = DateTime.Now;
+            DateTime currentTime = DateTime.Now.AddSeconds(-DateTime.Now.Second);
 
             if (currentTime < open)
             {
@@ -77,12 +77,10 @@ namespace FastPassTicketSystem
 
             //Fix: Only update "guests with the following tickets may now enter" only when the next available entry time has been reached
             //and when the list box isnt empty
-            if (currentTime > nextEntryTime && listBox1.Items.Count != 0) 
+            if (currentTime == nextEntryTime && listBox1.Items.Count != 0) 
             {
                 GuestsEnterLabel.Text = nextTicket.ToString();
             }
-
-            //TODO: Update next available entry based on minutes per window
         }
 
         /// <summary>
@@ -102,9 +100,12 @@ namespace FastPassTicketSystem
         /// <param name="e"></param>
         private void IssueTicketBtn_Click(object sender, EventArgs e)
         {
-            //Add one to total tickets outstanding everytime the issue button gets clicked
-            count++;
-            TotalTicketsLabel.Text = count.ToString();
+            //Only add more minutes if there are outstanding tickets issued
+            if (count > 0) 
+            {
+                //Add more minutes to the next entry time
+                nextEntryTime = nextEntryTime.AddMinutes(minutes);           
+            }
 
             //Update the next entry time
             NextEntryLabel.Text = nextEntryTime.ToShortTimeString().ToString();
@@ -116,16 +117,14 @@ namespace FastPassTicketSystem
             listBox1.Items.Add($"Ticket {nextTicket.ToString()}: " +
                 $"{nextEntryTime.ToShortTimeString().ToString()}");
 
-            //Add more minutes to the next entry time
-            nextEntryTime = nextEntryTime.AddMinutes(minutes);
+            //Add one to total tickets outstanding everytime the issue button gets clicked
+            count++;
+            TotalTicketsLabel.Text = count.ToString();
 
             //Increment the next ticket to be issued
             nextTicket++;
         }
 
         //TODO: Make Options button functional
-
-        //TODO: Once the next available entry time has passed, add more minutes 
-        //based on the options setting (minutes per window) , and update next available entry
     }
 }
