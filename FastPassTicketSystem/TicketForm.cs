@@ -13,7 +13,7 @@ namespace FastPassTicketSystem
     public partial class TicketForm : Form
     {
         //Keeps track of the outstanding tickets issued
-        int count = 0;
+        int outstandingTickets = 0;
 
         //Keeps track of the minutes to be added
         int minutes;
@@ -21,8 +21,14 @@ namespace FastPassTicketSystem
         //Keeps track of the current entry time
         DateTime nextEntryTime;
 
+        //Keeps track of the last entry time
+        DateTime nextEntryTimeDisplay;
+
         //Keeps track of the next ticket to be issued
         int nextTicket;
+
+        //Used only when there isn't any activity in the issuing of tickets
+        bool inactivity = true; //Don't add to group project
 
         public TicketForm()
         {
@@ -37,12 +43,14 @@ namespace FastPassTicketSystem
 
         private void TicketForm_Load(object sender, EventArgs e)
         {
-
             //Set the amount of minuted to be added based on the user input in the OptionsForm
             minutes = OptionsForm.input.MinutesPerWindow;
 
             //Set next entry time based on minutes per window that the user input in the options form
             nextEntryTime = DateTime.Now.AddMinutes(minutes).AddSeconds(-DateTime.Now.Second);
+
+            //Set the next entry time display (only used for the list box)
+            nextEntryTimeDisplay = nextEntryTime;
 
             //Set the next ticket to be issued
             nextTicket = OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber;
@@ -75,11 +83,34 @@ namespace FastPassTicketSystem
                 this.Text = $"{DateTime.Now.ToString()} (Open)";
             }
 
-            //Fix: Only update "guests with the following tickets may now enter" only when the next available entry time has been reached
+            //Only update "guests with the following tickets may now enter" only when the next available entry time has been reached
             //and when the list box isnt empty
-            if (currentTime == nextEntryTime && listBox1.Items.Count != 0) 
+            if (currentTime.ToString().Equals(nextEntryTime.ToString()) && listBox1.Items.Count != 0)
+            {
+                GuestsEnterLabel.Text = (nextTicket - outstandingTickets).ToString();
+
+                nextEntryTime = nextEntryTime.AddMinutes(minutes);
+                NextEntryLabel.Text = nextEntryTime.ToShortTimeString().ToString();
+
+                //Remove the first item in the listBox since that time has now passed and decrement total tickets outstanding
+                listBox1.Items.RemoveAt(0);
+                outstandingTickets--;
+                TotalTicketsLabel.Text = outstandingTickets.ToString();
+            }
+            //Only updates when no outstanding tickets have been issued
+            else if (currentTime.ToString().Equals(nextEntryTime.ToString()) && listBox1.Items.Count == 0 && inactivity == true) ////Don't add to group project////
             {
                 GuestsEnterLabel.Text = nextTicket.ToString();
+                nextEntryTime = nextEntryTime.AddMinutes(minutes);
+                NextEntryLabel.Text = nextEntryTime.ToShortTimeString().ToString();
+                nextEntryTimeDisplay = nextEntryTimeDisplay.AddMinutes(minutes);
+
+                //Functionality test: Don't add any tickets upon first boot up, let the first next available entry pass, then add tickets
+                //Expected behavior: The ticket issued should match next available entry, then add minutes on the listbox display as usual
+                //                   guests with the following tickets may now enter should also update (once only) to that ticket issued and should
+                //                   behave normally (procedurally after that)
+
+               //Current behavior: It doesn't increment to the next ticket
             }
         }
 
@@ -100,31 +131,25 @@ namespace FastPassTicketSystem
         /// <param name="e"></param>
         private void IssueTicketBtn_Click(object sender, EventArgs e)
         {
+            inactivity = false; ////Don't add to group project////
+
             //Only add more minutes if there are outstanding tickets issued
-            if (count > 0) 
+            if (outstandingTickets > 0)
             {
-                //Add more minutes to the next entry time
-                nextEntryTime = nextEntryTime.AddMinutes(minutes);           
+                //Add more minutes to the last entry time
+                nextEntryTimeDisplay = nextEntryTimeDisplay.AddMinutes(minutes);
             }
 
-            //Update the next entry time
-            NextEntryLabel.Text = nextEntryTime.ToShortTimeString().ToString();
-
-            //Update the next available entry
-            //GuestsEnterLabel.Text = nextTicket.ToString();
-
-            //Add the next ticket and time to the listbox
+            //Add the next ticket and their time slot to the listbox
             listBox1.Items.Add($"Ticket {nextTicket.ToString()}: " +
-                $"{nextEntryTime.ToShortTimeString().ToString()}");
+                $"{nextEntryTimeDisplay.ToShortTimeString().ToString()}");
 
             //Add one to total tickets outstanding everytime the issue button gets clicked
-            count++;
-            TotalTicketsLabel.Text = count.ToString();
+            outstandingTickets++;
+            TotalTicketsLabel.Text = outstandingTickets.ToString();
 
             //Increment the next ticket to be issued
             nextTicket++;
         }
-
-        //TODO: Make Options button functional
     }
 }
