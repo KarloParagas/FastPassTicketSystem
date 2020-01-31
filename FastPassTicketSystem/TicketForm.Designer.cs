@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.IssueTicketBtn = new System.Windows.Forms.Button();
             this.TitleBarTime = new System.Windows.Forms.Timer(this.components);
+            this.prePurchaseTicket = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -168,11 +169,22 @@
             this.TitleBarTime.Interval = 1000;
             this.TitleBarTime.Tick += new System.EventHandler(this.TitleBarTime_Tick);
             // 
+            // prePurchaseTicket
+            // 
+            this.prePurchaseTicket.Location = new System.Drawing.Point(193, 227);
+            this.prePurchaseTicket.Margin = new System.Windows.Forms.Padding(1);
+            this.prePurchaseTicket.Name = "prePurchaseTicket";
+            this.prePurchaseTicket.Size = new System.Drawing.Size(112, 23);
+            this.prePurchaseTicket.TabIndex = 6;
+            this.prePurchaseTicket.Text = "Pre Purchase";
+            this.prePurchaseTicket.UseVisualStyleBackColor = true;
+            // 
             // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 470);
+            this.Controls.Add(this.prePurchaseTicket);
             this.Controls.Add(this.IssueTicketBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -204,6 +216,7 @@
         private System.Windows.Forms.Label NextEntryLabel;
         private System.Windows.Forms.Label TotalTicketsLabel;
         private System.Windows.Forms.Timer TitleBarTime;
+        private System.Windows.Forms.Button prePurchaseTicket;
     }
 }
 
