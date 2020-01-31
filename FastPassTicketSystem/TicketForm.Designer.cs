@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.OptionsBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GuestsEnterLabel = new System.Windows.Forms.Label();
@@ -55,19 +54,9 @@
             this.listBox1.Size = new System.Drawing.Size(274, 160);
             this.listBox1.TabIndex = 0;
             // 
-            // OptionsBtn
-            // 
-            this.OptionsBtn.Location = new System.Drawing.Point(34, 433);
-            this.OptionsBtn.Margin = new System.Windows.Forms.Padding(1);
-            this.OptionsBtn.Name = "OptionsBtn";
-            this.OptionsBtn.Size = new System.Drawing.Size(98, 23);
-            this.OptionsBtn.TabIndex = 1;
-            this.OptionsBtn.Text = "Options";
-            this.OptionsBtn.UseVisualStyleBackColor = true;
-            // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(208, 433);
+            this.ExitBtn.Location = new System.Drawing.Point(119, 437);
             this.ExitBtn.Margin = new System.Windows.Forms.Padding(1);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(98, 23);
@@ -189,7 +178,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ExitBtn);
-            this.Controls.Add(this.OptionsBtn);
             this.Controls.Add(this.listBox1);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "TicketForm";
@@ -205,7 +193,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button OptionsBtn;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label GuestsEnterLabel;
