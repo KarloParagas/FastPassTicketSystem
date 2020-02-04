@@ -30,11 +30,18 @@ namespace FastPassTicketSystem
         public TicketForm()
         {
             InitializeComponent();
-            OptionsForm options = new OptionsForm();
-            DialogResult result = options.ShowDialog();
+
+            //Display the purchase ticket form
+            PurchaseForm purchase = new PurchaseForm();
+            DialogResult result = purchase.ShowDialog();
             if (result == DialogResult.OK) 
             {
-                TitleBarTime.Start();            
+                OptionsForm options = new OptionsForm();
+                DialogResult r = options.ShowDialog();
+                if (r == DialogResult.OK) 
+                {
+                    TitleBarTime.Start();            
+                }            
             }
         }
 
@@ -50,11 +57,17 @@ namespace FastPassTicketSystem
             nextEntryTimeDisplay = nextEntryTime;
 
             //Set the next ticket to be issued
-            nextTicket = OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber;
+            //nextTicket = //Configure with the tickets issued from the purchase form database
+
+            //Notes
+            //nextTicket = OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber;
 
             //Display the guests with following tickets that can enter
-            GuestsEnterLabel.Text = $"{OptionsForm.input.FirstTicketNumber.ToString()} - " +
-                                    $"{(OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber - 1).ToString()}";
+            //GuestsEnterLabel.Text = //Configure with the tickets purchased from the purchase form database
+
+            //Notes
+            //GuestsEnterLabel.Text = $"{OptionsForm.input.FirstTicketNumber.ToString()} - " +
+            //                        $"{(OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber - 1).ToString()}";
 
             //Display next available entry
             NextEntryLabel.Text = DateTime.Now.AddMinutes(OptionsForm.input.MinutesPerWindow).ToShortTimeString().ToString();
