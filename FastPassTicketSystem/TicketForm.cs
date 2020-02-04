@@ -27,9 +27,6 @@ namespace FastPassTicketSystem
         //Keeps track of the next ticket to be issued
         int nextTicket;
 
-        //Used only when there isn't any activity in the issuing of tickets
-        bool inactivity = true; //Don't add to group project
-
         public TicketForm()
         {
             InitializeComponent();
@@ -97,21 +94,6 @@ namespace FastPassTicketSystem
                 outstandingTickets--;
                 TotalTicketsLabel.Text = outstandingTickets.ToString();
             }
-            //Only updates when no outstanding tickets have been issued
-            else if (currentTime.ToString().Equals(nextEntryTime.ToString()) && listBox1.Items.Count == 0 && inactivity == true) ////Don't add to group project////
-            {
-                GuestsEnterLabel.Text = nextTicket.ToString();
-                nextEntryTime = nextEntryTime.AddMinutes(minutes);
-                NextEntryLabel.Text = nextEntryTime.ToShortTimeString().ToString();
-                nextEntryTimeDisplay = nextEntryTimeDisplay.AddMinutes(minutes);
-
-                //Functionality test: Don't add any tickets upon first boot up, let the first next available entry pass, then add tickets
-                //Expected behavior: The ticket issued should match next available entry, then add minutes on the listbox display as usual
-                //                   guests with the following tickets may now enter should also update (once only) to that ticket issued and should
-                //                   behave normally (procedurally after that)
-
-               //Current behavior: It doesn't increment to the next ticket
-            }
         }
 
         /// <summary>
@@ -131,8 +113,6 @@ namespace FastPassTicketSystem
         /// <param name="e"></param>
         private void IssueTicketBtn_Click(object sender, EventArgs e)
         {
-            inactivity = false; ////Don't add to group project////
-
             //Only add more minutes if there are outstanding tickets issued
             if (outstandingTickets > 0)
             {
