@@ -7,7 +7,7 @@ namespace FastPassTicketSystem
     public class CustomerPurchaseContext : DbContext
     {
         public CustomerPurchaseContext()
-            : base("name=CustomerPurchaseContext1")
+            : base("name=CustomerPurchasesContext")
         {
         }
 

@@ -16,6 +16,7 @@
                         LastName = c.String(nullable: false, maxLength: 50),
                         Email = c.String(nullable: false),
                         PhoneNumber = c.String(nullable: false, maxLength: 10),
+                        DatePurchased = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.CustomerId);
             

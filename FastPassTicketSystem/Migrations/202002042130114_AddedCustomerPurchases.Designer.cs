@@ -13,7 +13,7 @@ namespace FastPassTicketSystem.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202002040440540_AddedCustomerPurchases"; }
+            get { return "202002042130114_AddedCustomerPurchases"; }
         }
         
         string IMigrationMetadata.Source
