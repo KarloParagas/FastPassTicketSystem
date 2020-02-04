@@ -11,13 +11,13 @@
                 "dbo.CustomerPurchases",
                 c => new
                     {
-                        TicketNumber = c.Int(nullable: false, identity: true),
+                        CustomerId = c.Int(nullable: false, identity: true),
                         FirstName = c.String(nullable: false, maxLength: 50),
                         LastName = c.String(nullable: false, maxLength: 50),
                         Email = c.String(nullable: false),
                         PhoneNumber = c.String(nullable: false, maxLength: 10),
                     })
-                .PrimaryKey(t => t.TicketNumber);
+                .PrimaryKey(t => t.CustomerId);
             
         }
         

@@ -10,14 +10,14 @@ namespace FastPassTicketSystem
     public static class CustomerPurchaseDb
     {
         /// <summary>
-        /// Returns a list of all the customer purchases sorted by TicketNumber in ascending order
+        /// Returns a list of all the customer purchases sorted by customer id in ascending order
         /// </summary>
         public static List<CustomerPurchase> GetAllCustomerPurchases() 
         {
             using (var context = new CustomerPurchaseContext()) 
             {
                 List<CustomerPurchase> purchases = context.CustomerPurchases
-                                                          .OrderBy(p => p.TicketNumber)
+                                                          .OrderBy(p => p.CustomerId)
                                                           .ToList();
                 return purchases;
             }
@@ -34,7 +34,7 @@ namespace FastPassTicketSystem
         }
 
         /// <summary>
-        /// Deletes a customer purchase from the database by their ticket number
+        /// Deletes a customer purchase from the database by their customer id
         /// </summary>
         /// <param name="p"></param>
         public static void Delete(CustomerPurchase p) 
@@ -49,7 +49,7 @@ namespace FastPassTicketSystem
         }
 
         /// <summary>
-        /// Updated all customer purchase data (Except for ticket number, which is the primary key)
+        /// Updates all customer purchase data (Except for customer id, which is the primary key)
         /// </summary>
         /// <param name="p"></param>
         /// <returns></returns>
@@ -65,7 +65,7 @@ namespace FastPassTicketSystem
         }
 
         /// <summary>
-        /// If ticket number is 0, they will be added. Otherwise, it will update based on the ticket number
+        /// If customer id is 0, they will be added. Otherwise, it will update based on the customer id
         /// </summary>
         /// <param name="p"></param>
         /// <returns></returns>
@@ -73,7 +73,7 @@ namespace FastPassTicketSystem
         {
             using (var context = new CustomerPurchaseContext()) 
             {
-                context.Entry(p).State = (p.TicketNumber == 0) ? EntityState.Added : EntityState.Modified;
+                context.Entry(p).State = (p.CustomerId == 0) ? EntityState.Added : EntityState.Modified;
                 context.SaveChanges();
                 return p;
             }

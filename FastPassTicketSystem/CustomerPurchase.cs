@@ -10,7 +10,7 @@ namespace FastPassTicketSystem
     public class CustomerPurchase
     {
         [Key]
-        public int TicketNumber { get; set; }
+        public int CustomerId { get; set; }
 
         [Required]
         [StringLength(50)]
