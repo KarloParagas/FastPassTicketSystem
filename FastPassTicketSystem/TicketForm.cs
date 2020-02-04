@@ -27,6 +27,9 @@ namespace FastPassTicketSystem
         //Keeps track of the ticket to be issued
         int Ticket;
 
+        //Keeps track of the next ticket that can enter
+        int nextEntryTicket;
+
         public TicketForm()
         {
             InitializeComponent();
@@ -56,9 +59,8 @@ namespace FastPassTicketSystem
             //Set the ticket to be issued
             Ticket = 0;
 
-            ////Notes
-            ////GuestsEnterLabel.Text = $"{OptionsForm.input.FirstTicketNumber.ToString()} - " +
-            ////                        $"{(OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber - 1).ToString()}";
+            //Set the next entry ticket
+            nextEntryTicket = 0;
 
             //Display the guests with following tickets that can enter
             GuestsEnterLabel.Text = Ticket.ToString();
@@ -87,13 +89,13 @@ namespace FastPassTicketSystem
                 this.Text = $"{DateTime.Now.ToString()} (Open)";
             }
 
-            //TODO: If the time hits closing time, delete all the tickets in the database
-
             //Only update "guests with the following tickets may now enter" only when the next available entry time has been reached
             //and when the list box isnt empty
             if (currentTime.ToString().Equals(nextEntryTime.ToString()) && listBox1.Items.Count != 0)
             {
-                GuestsEnterLabel.Text = (outstandingTickets - Ticket).ToString(); //Not displaying the right ticket
+                nextEntryTicket++;
+
+                GuestsEnterLabel.Text = nextEntryTicket.ToString(); //Not displaying the right ticket
 
                 nextEntryTime = nextEntryTime.AddMinutes(minutes);
                 NextEntryLabel.Text = nextEntryTime.ToShortTimeString().ToString();
