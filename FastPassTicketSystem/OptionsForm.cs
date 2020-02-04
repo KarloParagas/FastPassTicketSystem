@@ -31,10 +31,8 @@ namespace FastPassTicketSystem
                 {
                     //Extract all input
                     MinutesPerWindow = Convert.ToInt32(MinutesPerWindowTxt.Text),
-                    GuestsPerWindow = Convert.ToInt32(GuestsPerWindowTxt.Text),
                     StartTime = Convert.ToDateTime(StartTimeTxt.Text),
-                    EndTime = Convert.ToDateTime(EndTimeTxt.Text),
-                    FirstTicketNumber = Convert.ToInt32(FirstTicketNumTxt.Text)             
+                    EndTime = Convert.ToDateTime(EndTimeTxt.Text),            
                 };
 
                 //Assign the Options object with all the extrated user input to the UserInput instance
@@ -66,17 +64,10 @@ namespace FastPassTicketSystem
                 MessageBox.Show("Start time and End time must be a valid date time input. Ex: (10:00 AM/PM)");
                 return false;
             }
-            if (!int.TryParse(MinutesPerWindowTxt.Text, out validInteger) ||
-                !int.TryParse(GuestsPerWindowTxt.Text, out validInteger) ||
-                !int.TryParse(FirstTicketNumTxt.Text, out validInteger)) 
+            if (!int.TryParse(MinutesPerWindowTxt.Text, out validInteger)) 
             {
                 MessageBox.Show("Minutes per window, Guests per window, and " +
                                 "First ticket number must be a valid integer input.");
-                return false;
-            }
-            if (Convert.ToInt32(FirstTicketNumTxt.Text) > Convert.ToInt32(GuestsPerWindowTxt.Text)) 
-            {
-                MessageBox.Show("First ticket number cannot be greater than the guests per window");
                 return false;
             }
 
@@ -86,10 +77,8 @@ namespace FastPassTicketSystem
         private bool IsPresent()
         {
             if (string.IsNullOrWhiteSpace(MinutesPerWindowTxt.Text) || 
-                string.IsNullOrWhiteSpace(GuestsPerWindowTxt.Text) ||
                 string.IsNullOrWhiteSpace(StartTimeTxt.Text) ||
-                string.IsNullOrWhiteSpace(EndTimeTxt.Text) ||
-                string.IsNullOrWhiteSpace(FirstTicketNumTxt.Text)) 
+                string.IsNullOrWhiteSpace(EndTimeTxt.Text)) 
             {
                 MessageBox.Show("Cannot submit an empty form");
                 return false;

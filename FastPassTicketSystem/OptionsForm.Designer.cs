@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.MinutesPerWindowTxt = new System.Windows.Forms.TextBox();
             this.EndTimeTxt = new System.Windows.Forms.TextBox();
-            this.FirstTicketNumTxt = new System.Windows.Forms.TextBox();
             this.StartTimeTxt = new System.Windows.Forms.TextBox();
-            this.GuestsPerWindowTxt = new System.Windows.Forms.TextBox();
             this.OkBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -51,20 +47,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Minutes per window:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 61);
-            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Guests per window:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 99);
+            this.label3.Location = new System.Drawing.Point(19, 61);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
@@ -74,67 +60,41 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 134);
+            this.label4.Location = new System.Drawing.Point(19, 96);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "End time:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 170);
-            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "First ticket number:";
-            // 
             // MinutesPerWindowTxt
             // 
             this.MinutesPerWindowTxt.Location = new System.Drawing.Point(141, 23);
-            this.MinutesPerWindowTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MinutesPerWindowTxt.Margin = new System.Windows.Forms.Padding(1);
             this.MinutesPerWindowTxt.Name = "MinutesPerWindowTxt";
             this.MinutesPerWindowTxt.Size = new System.Drawing.Size(113, 20);
             this.MinutesPerWindowTxt.TabIndex = 0;
             // 
             // EndTimeTxt
             // 
-            this.EndTimeTxt.Location = new System.Drawing.Point(141, 132);
-            this.EndTimeTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EndTimeTxt.Location = new System.Drawing.Point(141, 94);
+            this.EndTimeTxt.Margin = new System.Windows.Forms.Padding(1);
             this.EndTimeTxt.Name = "EndTimeTxt";
             this.EndTimeTxt.Size = new System.Drawing.Size(113, 20);
             this.EndTimeTxt.TabIndex = 3;
             // 
-            // FirstTicketNumTxt
-            // 
-            this.FirstTicketNumTxt.Location = new System.Drawing.Point(141, 168);
-            this.FirstTicketNumTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.FirstTicketNumTxt.Name = "FirstTicketNumTxt";
-            this.FirstTicketNumTxt.Size = new System.Drawing.Size(113, 20);
-            this.FirstTicketNumTxt.TabIndex = 4;
-            // 
             // StartTimeTxt
             // 
-            this.StartTimeTxt.Location = new System.Drawing.Point(141, 96);
-            this.StartTimeTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.StartTimeTxt.Location = new System.Drawing.Point(141, 58);
+            this.StartTimeTxt.Margin = new System.Windows.Forms.Padding(1);
             this.StartTimeTxt.Name = "StartTimeTxt";
             this.StartTimeTxt.Size = new System.Drawing.Size(113, 20);
             this.StartTimeTxt.TabIndex = 2;
             // 
-            // GuestsPerWindowTxt
-            // 
-            this.GuestsPerWindowTxt.Location = new System.Drawing.Point(141, 58);
-            this.GuestsPerWindowTxt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.GuestsPerWindowTxt.Name = "GuestsPerWindowTxt";
-            this.GuestsPerWindowTxt.Size = new System.Drawing.Size(113, 20);
-            this.GuestsPerWindowTxt.TabIndex = 1;
-            // 
             // OkBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(141, 212);
-            this.OkBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.OkBtn.Location = new System.Drawing.Point(141, 136);
+            this.OkBtn.Margin = new System.Windows.Forms.Padding(1);
             this.OkBtn.Name = "OkBtn";
             this.OkBtn.Size = new System.Drawing.Size(111, 20);
             this.OkBtn.TabIndex = 5;
@@ -146,19 +106,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 253);
+            this.ClientSize = new System.Drawing.Size(280, 177);
             this.Controls.Add(this.OkBtn);
-            this.Controls.Add(this.GuestsPerWindowTxt);
             this.Controls.Add(this.StartTimeTxt);
-            this.Controls.Add(this.FirstTicketNumTxt);
             this.Controls.Add(this.EndTimeTxt);
             this.Controls.Add(this.MinutesPerWindowTxt);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "OptionsForm";
             this.Text = "Options";
             this.ResumeLayout(false);
@@ -169,15 +125,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox MinutesPerWindowTxt;
         private System.Windows.Forms.TextBox EndTimeTxt;
-        private System.Windows.Forms.TextBox FirstTicketNumTxt;
         private System.Windows.Forms.TextBox StartTimeTxt;
-        private System.Windows.Forms.TextBox GuestsPerWindowTxt;
         private System.Windows.Forms.Button OkBtn;
     }
 }

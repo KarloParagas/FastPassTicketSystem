@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="CustomerPurchase.cs" />
     <Compile Include="CustomerPurchaseContext.cs" />
+    <Compile Include="CustomerPurchaseDb.cs" />
     <Compile Include="Migrations\202002040247519_AddedCustomerPurchases.cs" />
     <Compile Include="Migrations\202002040247519_AddedCustomerPurchases.designer.cs">
       <DependentUpon>202002040247519_AddedCustomerPurchases.cs</DependentUpon>
