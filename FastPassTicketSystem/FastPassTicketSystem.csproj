@@ -60,6 +60,12 @@
   <ItemGroup>
     <Compile Include="CustomerPurchase.cs" />
     <Compile Include="CustomerPurchaseDb.cs" />
+    <Compile Include="CustomerPurchaseContext.cs" />
+    <Compile Include="Migrations\202002042130114_AddedCustomerPurchases.cs" />
+    <Compile Include="Migrations\202002042130114_AddedCustomerPurchases.designer.cs">
+      <DependentUpon>202002042130114_AddedCustomerPurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Options.cs" />
+    <EmbeddedResource Include="Migrations\202002042130114_AddedCustomerPurchases.resx">
+      <DependentUpon>202002042130114_AddedCustomerPurchases.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OptionsForm.resx">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>
