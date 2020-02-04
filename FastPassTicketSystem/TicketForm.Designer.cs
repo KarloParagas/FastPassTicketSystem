@@ -38,9 +38,8 @@
             this.TotalTicketsLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.IssueTicketBtn = new System.Windows.Forms.Button();
             this.TitleBarTime = new System.Windows.Forms.Timer(this.components);
-            this.prePurchaseTicket = new System.Windows.Forms.Button();
+            this.PurchaseTicket = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +47,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(34, 262);
+            this.listBox1.Location = new System.Drawing.Point(34, 266);
             this.listBox1.Margin = new System.Windows.Forms.Padding(1);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(274, 160);
@@ -56,7 +55,7 @@
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(119, 437);
+            this.ExitBtn.Location = new System.Drawing.Point(119, 441);
             this.ExitBtn.Margin = new System.Windows.Forms.Padding(1);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(98, 23);
@@ -142,39 +141,28 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total tickets outstanding:";
             // 
-            // IssueTicketBtn
-            // 
-            this.IssueTicketBtn.Location = new System.Drawing.Point(34, 227);
-            this.IssueTicketBtn.Margin = new System.Windows.Forms.Padding(1);
-            this.IssueTicketBtn.Name = "IssueTicketBtn";
-            this.IssueTicketBtn.Size = new System.Drawing.Size(112, 23);
-            this.IssueTicketBtn.TabIndex = 5;
-            this.IssueTicketBtn.Text = "Issue Ticket";
-            this.IssueTicketBtn.UseVisualStyleBackColor = true;
-            this.IssueTicketBtn.Click += new System.EventHandler(this.IssueTicketBtn_Click);
-            // 
             // TitleBarTime
             // 
             this.TitleBarTime.Interval = 1000;
             this.TitleBarTime.Tick += new System.EventHandler(this.TitleBarTime_Tick);
             // 
-            // prePurchaseTicket
+            // PurchaseTicket
             // 
-            this.prePurchaseTicket.Location = new System.Drawing.Point(193, 227);
-            this.prePurchaseTicket.Margin = new System.Windows.Forms.Padding(1);
-            this.prePurchaseTicket.Name = "prePurchaseTicket";
-            this.prePurchaseTicket.Size = new System.Drawing.Size(112, 23);
-            this.prePurchaseTicket.TabIndex = 6;
-            this.prePurchaseTicket.Text = "Pre Purchase";
-            this.prePurchaseTicket.UseVisualStyleBackColor = true;
+            this.PurchaseTicket.Location = new System.Drawing.Point(114, 230);
+            this.PurchaseTicket.Margin = new System.Windows.Forms.Padding(1);
+            this.PurchaseTicket.Name = "PurchaseTicket";
+            this.PurchaseTicket.Size = new System.Drawing.Size(112, 23);
+            this.PurchaseTicket.TabIndex = 6;
+            this.PurchaseTicket.Text = "Purchase Ticket";
+            this.PurchaseTicket.UseVisualStyleBackColor = true;
+            this.PurchaseTicket.Click += new System.EventHandler(this.PurchaseTicket_Click);
             // 
             // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 470);
-            this.Controls.Add(this.prePurchaseTicket);
-            this.Controls.Add(this.IssueTicketBtn);
+            this.ClientSize = new System.Drawing.Size(343, 482);
+            this.Controls.Add(this.PurchaseTicket);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ExitBtn);
@@ -199,11 +187,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button IssueTicketBtn;
         private System.Windows.Forms.Label NextEntryLabel;
         private System.Windows.Forms.Label TotalTicketsLabel;
         private System.Windows.Forms.Timer TitleBarTime;
-        private System.Windows.Forms.Button prePurchaseTicket;
+        private System.Windows.Forms.Button PurchaseTicket;
     }
 }
 

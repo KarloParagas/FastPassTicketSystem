@@ -24,29 +24,26 @@ namespace FastPassTicketSystem
         //Keeps track of the last entry time
         DateTime nextEntryTimeDisplay;
 
-        //Keeps track of the next ticket to be issued
-        int nextTicket;
+        //Keeps track of the ticket to be issued
+        int Ticket;
 
         public TicketForm()
         {
             InitializeComponent();
 
-            //Display the purchase ticket form
-            PurchaseForm purchase = new PurchaseForm();
-            DialogResult result = purchase.ShowDialog();
-            if (result == DialogResult.OK) 
+            OptionsForm options = new OptionsForm();
+            DialogResult r = options.ShowDialog();
+            if (r == DialogResult.OK) 
             {
-                OptionsForm options = new OptionsForm();
-                DialogResult r = options.ShowDialog();
-                if (r == DialogResult.OK) 
-                {
-                    TitleBarTime.Start();            
-                }            
-            }
+                TitleBarTime.Start();            
+            }            
         }
 
         private void TicketForm_Load(object sender, EventArgs e)
         {
+            //Create a database context to access the database
+            CustomerPurchaseContext db = new CustomerPurchaseContext();
+
             //Set the amount of minuted to be added based on the user input in the OptionsForm
             minutes = OptionsForm.input.MinutesPerWindow;
 
@@ -56,18 +53,15 @@ namespace FastPassTicketSystem
             //Set the next entry time display (only used for the list box)
             nextEntryTimeDisplay = nextEntryTime;
 
-            //Set the next ticket to be issued
-            //nextTicket = //Configure with the tickets issued from the purchase form database
+            //Set the ticket to be issued
+            Ticket = 0;
 
-            //Notes
-            //nextTicket = OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber;
+            ////Notes
+            ////GuestsEnterLabel.Text = $"{OptionsForm.input.FirstTicketNumber.ToString()} - " +
+            ////                        $"{(OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber - 1).ToString()}";
 
             //Display the guests with following tickets that can enter
-            //GuestsEnterLabel.Text = //Configure with the tickets purchased from the purchase form database
-
-            //Notes
-            //GuestsEnterLabel.Text = $"{OptionsForm.input.FirstTicketNumber.ToString()} - " +
-            //                        $"{(OptionsForm.input.GuestsPerWindow + OptionsForm.input.FirstTicketNumber - 1).ToString()}";
+            GuestsEnterLabel.Text = Ticket.ToString();
 
             //Display next available entry
             NextEntryLabel.Text = DateTime.Now.AddMinutes(OptionsForm.input.MinutesPerWindow).ToShortTimeString().ToString();
@@ -93,11 +87,13 @@ namespace FastPassTicketSystem
                 this.Text = $"{DateTime.Now.ToString()} (Open)";
             }
 
+            //TODO: If the time hits closing time, delete all the tickets in the database
+
             //Only update "guests with the following tickets may now enter" only when the next available entry time has been reached
             //and when the list box isnt empty
             if (currentTime.ToString().Equals(nextEntryTime.ToString()) && listBox1.Items.Count != 0)
             {
-                GuestsEnterLabel.Text = (nextTicket - outstandingTickets).ToString();
+                GuestsEnterLabel.Text = (outstandingTickets - Ticket).ToString(); //Not displaying the right ticket
 
                 nextEntryTime = nextEntryTime.AddMinutes(minutes);
                 NextEntryLabel.Text = nextEntryTime.ToShortTimeString().ToString();
@@ -124,7 +120,7 @@ namespace FastPassTicketSystem
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void IssueTicketBtn_Click(object sender, EventArgs e)
+        private void IssueTicket()
         {
             //Only add more minutes if there are outstanding tickets issued
             if (outstandingTickets > 0)
@@ -133,16 +129,27 @@ namespace FastPassTicketSystem
                 nextEntryTimeDisplay = nextEntryTimeDisplay.AddMinutes(minutes);
             }
 
+            //Increment the ticket to be issued
+            Ticket++;
+
             //Add the next ticket and their time slot to the listbox
-            listBox1.Items.Add($"Ticket {nextTicket.ToString()}: " +
+            listBox1.Items.Add($"Ticket {Ticket.ToString()}: " +
                 $"{nextEntryTimeDisplay.ToShortTimeString().ToString()}");
 
             //Add one to total tickets outstanding everytime the issue button gets clicked
             outstandingTickets++;
             TotalTicketsLabel.Text = outstandingTickets.ToString();
+        }
 
-            //Increment the next ticket to be issued
-            nextTicket++;
+        private void PurchaseTicket_Click(object sender, EventArgs e)
+        {
+            //Display the purchase ticket form
+            PurchaseForm purchase = new PurchaseForm();
+            DialogResult result = purchase.ShowDialog();
+            if (result == DialogResult.OK) 
+            {
+                IssueTicket();
+            }
         }
     }
 }

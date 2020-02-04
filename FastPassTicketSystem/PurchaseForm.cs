@@ -30,7 +30,9 @@ namespace FastPassTicketSystem
 
             //Add the purchase to the database
             CustomerPurchaseDb.Add(cp);
-            MessageBox.Show($"Ticket {cp.TicketNumber} successfully purchased");
+            MessageBox.Show($"Ticket successfully purchased");
+
+            DialogResult = DialogResult.OK;
         }
     }
 }
