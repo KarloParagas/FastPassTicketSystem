@@ -25,7 +25,8 @@ namespace FastPassTicketSystem
                 FirstName = FirstNameTxt.Text,
                 LastName = LastNameTxt.Text,
                 Email = EmailTxt.Text,
-                PhoneNumber = PhoneNumberTxt.Text
+                PhoneNumber = PhoneNumberTxt.Text,
+                DatePurchased = DateTime.Now
             };
 
             //Add the purchase to the database

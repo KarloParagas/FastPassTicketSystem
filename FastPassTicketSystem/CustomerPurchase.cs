@@ -27,5 +27,7 @@ namespace FastPassTicketSystem
         [Required]
         [StringLength(10)]
         public string PhoneNumber { get; set; }
+
+        public DateTime DatePurchased { get; set; }
     }
 }
